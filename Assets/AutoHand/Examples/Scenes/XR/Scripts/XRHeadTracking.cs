@@ -5,7 +5,7 @@ using UnityEngine.XR;
 
 namespace Autohand.Demo{
 public class XRHeadTracking : MonoBehaviour{
-#if UNITY_2019_3_OR_NEWER
+#if UNITY_2020_3_OR_NEWER
         public TrackingOriginModeFlags mode = TrackingOriginModeFlags.TrackingReference;
 
     void Start(){

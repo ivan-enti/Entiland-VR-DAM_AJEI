@@ -12,6 +12,10 @@ public class OpenXRAutoHandAxisFingerBender : MonoBehaviour{
     public float[] bendOffsets;
     float lastAxis;
 
+    public void OnEnable() {
+        if(bendAction.action != null) bendAction.action.Enable();
+    }
+
     void LateUpdate()
     {
         var currAxis = bendAction.action.ReadValue<float>();

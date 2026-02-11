@@ -10,12 +10,16 @@ public class OpenXRControllerEvent : MonoBehaviour{
     public InputActionProperty action;
     public UnityEvent inputEvent;
 
-    void OnEnable(){
+    protected virtual void OnEnable(){
         action.action.Enable();
-        action.action.performed += (e) => { inputEvent?.Invoke(); };
+        action.action.performed += OnInputEvent;
     }
 
-    void OnDisable(){
-        action.action.performed -= (e) => { inputEvent?.Invoke(); };
+    protected virtual void OnDisable(){
+        action.action.performed -= OnInputEvent;
+    }
+
+    protected virtual void OnInputEvent(InputAction.CallbackContext context) {
+        inputEvent?.Invoke();
     }
 }

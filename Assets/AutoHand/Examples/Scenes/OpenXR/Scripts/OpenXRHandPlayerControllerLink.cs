@@ -4,7 +4,8 @@ using UnityEngine;
 using Autohand.Demo;
 using UnityEngine.InputSystem;
 
-namespace Autohand.Demo{
+namespace Autohand.Demo {
+    [HelpURL("https://app.gitbook.com/s/5zKO0EvOjzUDeT2aiFk3/auto-hand/controller-input")]
     public class OpenXRHandPlayerControllerLink : MonoBehaviour{
         public AutoHandPlayer player;
 

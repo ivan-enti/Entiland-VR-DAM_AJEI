@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Management;
 
@@ -17,15 +15,16 @@ public class XRProviderPicker : MonoBehaviour
     bool hasProvider = false;
 
     // Start is called before the first frame update
-    void Start() {
+    void OnEnable() {
         var loaders = XRGeneralSettings.Instance.Manager.activeLoaders;
         foreach(var loader in loaders) {
+            Debug.Log(loader.name);
             if(providerName == "" || providerName == loader.name)
                 hasProvider = true;
         }
 
         if (hasProvider)
-        {
+        { 
            // enableMe.AdjustPositions(disableMe);
             enableMe.enabled = true;
             disableMe.enabled = false;
