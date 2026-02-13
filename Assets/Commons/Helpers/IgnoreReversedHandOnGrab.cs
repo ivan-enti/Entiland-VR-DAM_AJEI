@@ -50,16 +50,16 @@ public class IgnoreReversedHandOnGrab : MonoBehaviour
         {
             foreach (Collider col in _collidersToIgnoreHands)
             {
-                _leftHand.ForceIgnoreCollision(col);
-                _rightHand.ForceIgnoreCollision(col);
+                _leftHand.HandIgnoreCollider(col, true);
+                _rightHand.HandIgnoreCollider(col, true);
             }
         }
         else
         {
             foreach (Collider col in _collidersToIgnoreHands)
             {
-                _leftHand.UnForceIgnoreCollision(col);
-                _rightHand.UnForceIgnoreCollision(col);
+                _leftHand.HandIgnoreCollider(col, true);
+                _rightHand.HandIgnoreCollider(col, true);
             }
         }
         
